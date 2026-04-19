@@ -12,8 +12,8 @@ app.use(cors());
 mongoose.connect(
   "mongodb+srv://ajiteshsinha2004_db_user:SINHA1014@drximposter.ravfmoa.mongodb.net/studentDB"
 )
-.then(() => console.log("✅ MongoDB Connected"))
-.catch(err => console.log(err));
+  .then(() => console.log("✅ MongoDB Connected"))
+  .catch(err => console.log(err));
 
 
 
@@ -28,7 +28,7 @@ app.post("/api/add-student", async (req, res) => {
   }
 });
 
-// GET ALL STUDENTS 
+// GET ALL STUDENTS
 app.get("/api/students", async (req, res) => {
   try {
     const students = await Student.find();
@@ -38,6 +38,25 @@ app.get("/api/students", async (req, res) => {
   }
 });
 
+// UPDATE STUDENT
+app.put("/api/update-student/:id", async (req, res) => {
+  try {
+    const updated = await Student.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    res.json({ message: "Student updated", student: updated });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// DELETE STUDENT
+app.delete("/api/delete-student/:id", async (req, res) => {
+  try {
+    await Student.findByIdAndDelete(req.params.id);
+    res.json({ message: "Student deleted" });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
 
 app.listen(5500, () => {
   console.log("Server running on port 5500");

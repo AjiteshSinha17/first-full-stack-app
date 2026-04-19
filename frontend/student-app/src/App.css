@@ -1,38 +1,154 @@
-.App {
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.app-wrapper {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+h1 {
+  font-size: 1.5rem;
+  border-bottom: 2px solid #000;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+/* Form */
+.form-section {
+  margin-bottom: 30px;
+}
+
+.form-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.form-grid input {
+  border: 1px solid #000;
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  width: 180px;
+  background: #fff;
+  color: #000;
+}
+
+.form-grid input:focus {
+  outline: 2px solid #000;
+}
+
+/* Buttons */
+button {
+  border: 1px solid #000;
+  background: #000;
+  color: #fff;
+  padding: 7px 16px;
+  font-size: 0.88rem;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+button:hover {
+  background: #333;
+}
+
+button.secondary {
+  background: #fff;
+  color: #000;
+}
+
+button.secondary:hover {
+  background: #eee;
+}
+
+button.danger {
+  background: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+
+button.danger:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+th {
+  background: #000;
+  color: #fff;
+  text-align: left;
+  padding: 8px 10px;
+}
+
+td {
+  border: 1px solid #ccc;
+  padding: 8px 10px;
+  vertical-align: middle;
+}
+
+tr:nth-child(even) {
+  background: #f5f5f5;
+}
+
+.editing-row {
+  background: #ddd !important;
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #000;
+  color: #fff;
+  padding: 10px 18px;
+  font-size: 0.85rem;
+  border: 1px solid #000;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background: #fff;
+  border: 1px solid #000;
+  padding: 28px;
+  max-width: 320px;
+  width: 90%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.modal h3 { margin-bottom: 8px; }
+.modal p  { margin-bottom: 20px; font-size: 0.9rem; color: #444; }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.empty {
+  text-align: center;
+  padding: 30px;
+  color: #666;
+  border: 1px dashed #999;
 }
